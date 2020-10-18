@@ -92,7 +92,7 @@ boolean Adafruit_APDS9960::begin(uint16_t iTimeMS, apds9960AGain_t aGain,
   /* Make sure we're actually connected */
   uint8_t x = read8(APDS9960_ID);
   if (x != 0xAB) {
-    Serial.printf(" x is %s",x);
+    Serial.printf(" x is %i",x);
     return false;
   }
 
