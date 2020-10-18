@@ -675,7 +675,7 @@ uint16_t Adafruit_APDS9960::read16R(uint8_t reg) {
 /*!
  *  @brief  Begins I2C communication
  */
-void Adafruit_APDS9960::_i2c_init() { _wire->begin(); }
+void Adafruit_APDS9960::_i2c_init() { _wire->begin(5,4); }
 
 /*!
  *  @brief  Reads num bytes from specified register into a given buffer
