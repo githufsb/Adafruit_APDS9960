@@ -84,6 +84,7 @@ void Adafruit_APDS9960::enable(boolean en) {
  */
 boolean Adafruit_APDS9960::begin(uint16_t iTimeMS, apds9960AGain_t aGain,
                                  uint8_t addr, TwoWire *theWire) {
+  Serial.printf("begin APDS9960 begin");
   _wire = theWire;
   _i2c_init();
   _i2caddr = addr;
@@ -91,6 +92,7 @@ boolean Adafruit_APDS9960::begin(uint16_t iTimeMS, apds9960AGain_t aGain,
   /* Make sure we're actually connected */
   uint8_t x = read8(APDS9960_ID);
   if (x != 0xAB) {
+    Serial.printf(" x is %s",x);
     return false;
   }
 
